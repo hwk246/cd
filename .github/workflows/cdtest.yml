@@ -46,8 +46,7 @@ jobs:
     
     runs-on: ubuntu-latest
 
-    steps:
-    
+    steps:   
     - name: SSH Remote Commands
       uses: appleboy/ssh-action@v0.1.6
       with:
