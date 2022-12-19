@@ -38,8 +38,7 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
-        pytest
-        
+        pytest    
 
   deploy:
     needs: build
@@ -47,7 +46,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:   
-    - name: SSH Remote Commands
+    - name: SSH Remote Command
       uses: appleboy/ssh-action@v0.1.6
       with:
         key: ${{secrets.DO_PRIVATE}}
