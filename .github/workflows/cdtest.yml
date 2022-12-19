@@ -45,16 +45,12 @@ jobs:
       with:
         key: ${{secrets.DO_PUBLIC}}
         host: ${{secrets.DO_IP}}
-        key: ${{secrets.MY_PRIVATE}}
-        port: # optional, default is 22
-    # ssh key passphrase
-        passphrase: # optional
-    # ssh username
-        username: # optional
-    # ssh password
-        password: # optional
-    # synchronous execution if multiple hosts
-        sync: # optional
+        script: 
+            touch test_file.txt
+   
+  
+ 
+   
           
   
         
