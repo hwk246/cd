@@ -13,11 +13,13 @@ permissions:
   contents: read
 
 jobs:
+
   build:
 
     runs-on: ubuntu-latest
 
     steps:
+    - name: checkout files
     - uses: actions/checkout@v3
     - name: Set up Python 3.10
       uses: actions/setup-python@v3
@@ -37,10 +39,16 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
+        
+
+  deploy:
+    needs: build
+    
+    runs-on: ubuntu-latest
+
+    steps:
     
     - name: SSH Remote Commands
-  # You may pin to the exact commit or the version.
-  # uses: appleboy/ssh-action@4a03da89e5c43da56e502053be4bbcb293411883
       uses: appleboy/ssh-action@v0.1.6
       with:
         key: ${{secrets.DO_PRIVATE}}
