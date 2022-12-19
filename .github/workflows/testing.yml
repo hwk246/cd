@@ -35,7 +35,7 @@ jobs:
             host: ${{secrets.SSH_HOST}}
             username: ${{secrets.SSH_USERNAME}}
             script: |
-              cd /Home
+              cd /home
               touch test.txt
           
           
