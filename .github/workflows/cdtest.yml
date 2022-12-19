@@ -37,22 +37,26 @@ jobs:
     - name: Test with pytest
       run: |
         pytest:staging
-        
-    - name: SSH Command
-      uses: D3rHase/ssh-command-action@v0.2.2
+    
+    - name: SSH Remote Commands
+  # You may pin to the exact commit or the version.
+  # uses: appleboy/ssh-action@4a03da89e5c43da56e502053be4bbcb293411883
+      uses: appleboy/ssh-action@v0.1.6
       with:
-        # hostname / IP of the server
+        key: ${{secrets.DO_PUBLIC}}
         host: ${{secrets.DO_IP}}
-        # ssh port of the server
+        key: ${{secrets.MY_PRIVATE}}
         port: # optional, default is 22
-        # user of the server
-        user: 
-        # private ssh key registered on the server
-        private_key: 
-        # Fingerprint of the server, preventing man-in-the-middle attacks
-        host_fingerprint: # optional
-        # command to be executed
-        command: # optional, default is echo 'Hello world'
+    # ssh key passphrase
+        passphrase: # optional
+    # ssh username
+        username: # optional
+    # ssh password
+        password: # optional
+    # synchronous execution if multiple hosts
+        sync: # optional
+          
+  
         
       
    
