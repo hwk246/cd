@@ -42,4 +42,5 @@ jobs:
         with:
           key: ${{secrets.DO_PRIVATE}}
           host: ${{secrets.DO_IP}}
+          username: ${{secrets.SSH_USERNAME}}
           script: touch test_file.txt
