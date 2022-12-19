@@ -13,11 +13,13 @@ permissions:
   contents: read
 
 jobs:
+
   build:
 
     runs-on: ubuntu-latest
 
     steps:
+    - name: checkout files
     - uses: actions/checkout@v3
     - name: Set up Python 3.10
       uses: actions/setup-python@v3
@@ -36,4 +38,28 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
-        pytest
+        pytest    
+
+  deploy:
+    needs: build
+    
+    runs-on: ubuntu-latest
+
+    steps:   
+    - name: SSH Remote Command
+      uses: appleboy/ssh-action@v0.1.6
+      with:
+        key: ${{secrets.DO_PRIVATE}}
+        host: ${{secrets.DO_IP}}
+        script: 
+            touch test_file.txt
+   
+  
+ 
+   
+          
+  
+        
+      
+   
+    
