@@ -36,7 +36,24 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
-        pytest
-    - name: write something
-      run:
-        echo test passed
+        pytest:staging
+        
+    - name: SSH Command
+      uses: D3rHase/ssh-command-action@v0.2.2
+      with:
+        # hostname / IP of the server
+        host: ${{secrets.DO_IP}}
+        # ssh port of the server
+        port: # optional, default is 22
+        # user of the server
+        user: 
+        # private ssh key registered on the server
+        private_key: 
+        # Fingerprint of the server, preventing man-in-the-middle attacks
+        host_fingerprint: # optional
+        # command to be executed
+        command: # optional, default is echo 'Hello world'
+        
+      
+   
+    
