@@ -38,14 +38,14 @@ jobs:
         run: |
           pytest
 
-  deploy:
-    needs: test
-    runs on: ubuntu-latest
-    steps:
-      - name: SSH Remote Command
-        uses: appleboy/ssh-action@v0.1.6
-        with:
-          key: ${{secrets.DO_PRIVATE}}
-          host: ${{secrets.DO_IP}}
-          username: ${{secrets.SSH_USERNAME}}
-          script: touch test_file.txt
+  # deploy:
+  #   needs: test
+  #   runs on: ubuntu-latest
+  #   steps:
+  #     - name: SSH Remote Command
+  #       uses: appleboy/ssh-action@v0.1.6
+  #       with:
+  #         key: ${{secrets.DO_PRIVATE}}
+  #         host: ${{secrets.DO_IP}}
+  #         username: ${{secrets.SSH_USERNAME}}
+  #         script: touch test_file.txt
