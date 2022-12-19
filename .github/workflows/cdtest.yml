@@ -43,7 +43,7 @@ jobs:
   # uses: appleboy/ssh-action@4a03da89e5c43da56e502053be4bbcb293411883
       uses: appleboy/ssh-action@v0.1.6
       with:
-        key: ${{secrets.MY_PRIVATE}}
+        key: ${{secrets.DO_PUBLIC}}
         host: ${{secrets.DO_IP}}
         script: 
             touch test_file.txt
