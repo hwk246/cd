@@ -1,6 +1,3 @@
-### CD Conntinuous Delivery
+### CD Continuous Delivery
 
 #### Added a little change here
-
-
-
