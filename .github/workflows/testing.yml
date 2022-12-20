@@ -31,9 +31,11 @@ jobs:
           key: ${{secrets.SSH_KEY}}
           host: ${{secrets.SSH_HOST}}
           username: ${{secrets.SSH_USERNAME}}
-      - name: Run a multiline script
-        script: |
-          cd /home/cd
-          git pull
-          cd
-          systemctl restart cd
+          script: |
+            cd /home/cd
+            git pull
+            cd
+            systemctl restart cd
+      - name: run single line
+        run: |
+          echo test succeeded
