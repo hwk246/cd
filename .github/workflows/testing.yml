@@ -32,7 +32,7 @@ jobs:
           host: ${{secrets.SSH_HOST}}
           username: ${{secrets.SSH_USERNAME}}
       - name: Run a multiline script
-        run: |
+        script: |
           cd /home/cd
           git pull
           cd
