@@ -34,4 +34,5 @@ jobs:
           script: |
             cd /home/cd
             git pull
-            systemctl restart nginx
+            cd
+            systemctl restart app
