@@ -12,10 +12,22 @@
 
     <title>{{title}}</title>
   </head>
+
   <body>
+    <nav>
+      <ul>
+        <li>
+          <a href="/">Home</a>
+        </li>
+        <li>
+          <a href="/xmas">X-mas</a>
+        </li>
+        <li>
+          <a href="/about">About</a>
+        </li>
+      </ul>
+    </nav>
     <h1>Continuous Delivery</h1>
-    <h3>Added some new text here</h3>
-    <h3>Little change to check</h3>
     {% block content %} {% endblock %} {% block content2 %} {% endblock %}
   </body>
 </html>
