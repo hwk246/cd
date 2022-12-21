@@ -39,6 +39,7 @@ jobs:
             systemctl restart cd
 
   job_2_goodbye:
+    needs: job_1_test
     runs-on: ubuntu-latest
 
     steps:
