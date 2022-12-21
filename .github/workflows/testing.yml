@@ -40,9 +40,11 @@ jobs:
       - name: run single line
 
   job_2_goodbye:
-    needs: [job_1_test]
+    needs: job_1_test
     runs-on: ubuntu-latest
     steps:
+      - name: checkout files
+        uses: actions/checkout@v3
       - name: Goodbye
         run: echo "goodbye"
         shell: bash
