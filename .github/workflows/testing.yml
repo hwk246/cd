@@ -31,14 +31,14 @@ jobs:
           key: ${{secrets.SSH_KEY}}
           host: ${{secrets.SSH_HOST}}
           username: ${{secrets.SSH_USERNAME}}
-          script: |
+          run: |
             cd /home/cd
             git pull
             cd
             systemctl restart cd
 
   job_2_goodbye:
-    needs: job_3_superlinter
+    needs: job_1_test
     runs-on: ubuntu-latest
     # if: always()      altijd uitvoeren ook als de eerste job niet slaagt.
 
@@ -57,7 +57,3 @@ jobs:
 
       - name: superlint-check
         uses: github/super-linter@v4
-        # env:
-        #   VALIDATE_ALL_CODEBASE: false
-        #   DEFAULT_BRANCH: master
-        #   GITHUB_TOKEN: ${{ secrets.GH_REPO_URL }}
