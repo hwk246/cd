@@ -39,10 +39,10 @@ jobs:
             systemctl restart cd
       - name: run single line
 
-  job_2_goodbye   
+  job_2_goodbye:
     needs: [job_1_test]
     runs-on: ubuntu-latest
     steps:
-      - name: Goodbye 
+      - name: Goodbye
         run: echo "goodbye"
         shell: bash
