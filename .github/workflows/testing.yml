@@ -40,7 +40,7 @@ jobs:
   job_2_goodbye:
     needs: [job_1_test, job_3_superlinter]
     runs-on: ubuntu-latest
-
+    if: always()
     steps:
       - name: Goodbye
         run: echo "Misschien is de website niet up-to-date maar je code is in ieder geval oké !"
@@ -48,8 +48,6 @@ jobs:
 
   job_3_superlinter:
     runs-on: ubuntu-latest
-    if: always()
-
     steps:
       - name: checkout files
         uses: actions/checkout@v3
