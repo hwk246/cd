@@ -6,11 +6,13 @@ on:
   pull_request:
     branches: ["master"]
 
-permissions:
-  contents: read
+  workflow_dispatch
+
+# permissions:
+#   contents: read
 
 jobs:
-  testing:
+  job_1_test:
     runs-on: ubuntu-latest
     steps:
       - name: checkout files
@@ -37,5 +39,11 @@ jobs:
             cd
             systemctl restart cd
       - name: run single line
-        run: |
-          echo test succeeded
+
+  job_2_goodbye   
+    needs: [job_1_test]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Goodbye 
+        run: echo "goodbye"
+        shell: bash

@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 {% extends "base.html" %} {% block content %}
 <h2>About CD and Github Workflow</h2>
 <h2>implementing yml file</h2>
@@ -22,7 +23,13 @@
   Run werkte ook voor een 'echo' bijvoorbeeld maar de test ging fout toen ik de
   server ging benaderen via command line argumenten. Het lijkt me dat Bash CL
   dus iets anders nodig heeft. Het lijkt me niet dat script werkt onder een van
-  de steps. Ik moet dat verder uitzoeken.
+  de steps. Ik moet dat verder uitzoeken. Test en daarna deploy moeten
+  natuurlijk serieel lopen. Als de test niet goed verloopt moet de deploy ook
+  niet doorgaan. Als dat twee verschillende jobs zijn dan moet dat serieel gaan.
+  Eventueel moet daar een manuele goedkeuring tussen zitten. Op
+  https://docs.github.com/en/actions/using-jobs/using-jobs-in-a-workflow zie ik
+  dat door het 'needs' to te voegen ze niet parallel gaan lopen. Er kunnen dus
+  verschillende routes worden gecreeerd met needs: [job2, job3] etc
 </p>
 <p>
   Ben wel geinteresseerd in 'multiple jobs' ik heb een voorbeeld gezien. Dit
@@ -40,6 +47,14 @@
     de main.py gaat nu ook niet geupdate worden door de *.py in .gitignore. Even
     aanpassen dus.</shit
   >
+</p>
+een 'workflow dispatch' toevoegen aan je workflow is handig. Dan kun je zonder
+commit ook de workflow activeren. Scheelt weer steeds een commit.
+<p>
+  Wat ik me ook afvroeg is hoe je de actions van marketplace kunt checken. Dat
+  kan door naar github.com te gaan met als path de resository bijvoorbeeld
+  /actions/checkout. Daar kan je dan een check doen van wat er gebeurt. De repo
+  wordt dus gecloned in je workflow
 </p>
 
 {% endblock content %}
