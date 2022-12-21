@@ -47,13 +47,13 @@ jobs:
         run: echo "Misschien is de website niet up-to-date maar je code is in ieder geval oké !"
         shell: bash
 
-  # job_3_superlinter:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - name: checkout files
-  #       uses: actions/checkout@v3
-  #       with:
-  #         fetch-depth: 0
+  job_3_superlinter:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout files
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
-  #     - name: superlint-check
-  #       uses: github/super-linter@v4
+      - name: superlint-check
+        uses: github/super-linter@v4

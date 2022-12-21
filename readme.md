@@ -18,6 +18,6 @@ First I wanted to deploy a React-app as we learned to create in the FED course. 
 
 Most of the time during this assignment was learning and discovering. Every hour you learn new thing. Impossible to apply all at once. For example the multiple jobs in a workflow. I read some articles and saw some tutorials but could not get it to work. The syntax of the yml file is very precise and it turned out that there was still a -name 'command' without a run or uses following. Because there was so much I changed and altered (eager to put everything in the file I found on the web) that it took me hours to find out. Very nice and usefull to exploit all the possibilities!
 
-### SSH
+### Deploy
 
-There is a lot of good informatie to find about github actions. But is was again aegerness that brought me in trouble mixing up al the keys or copy paste half the key that leaves you debugging till you almost want to give up!
+I questioned the way to update the files on the server after a push or pull request. I wanted only the files that were committed to be changed because I did not want to replace the whole directory. Besides that, this had to be done from my local machine. Not ideaal. The repository seemed the best solution but what about all the junk like .github, workflow, pycache etc. Never thought about .gitignore working two ways. It also works for the pull action.
