@@ -38,7 +38,7 @@ jobs:
             systemctl restart cd
 
   job_2_goodbye:
-    needs: [job_1_test, job_2_superlinter]
+    needs: [job_1_test, job_3_superlinter]
     runs-on: ubuntu-latest
 
     steps:
