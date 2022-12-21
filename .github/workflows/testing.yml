@@ -52,9 +52,12 @@ jobs:
     steps:
       - name: checkout files
         uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
       - name: superlint-check
         uses: github/super-linter@v4
-        env:
-          VALIDATE_ALL_CODEBASE: false
-          DEFAULT_BRANCH: master
-          GITHUB_TOKEN: ${{ secrets.GH_REPO_URL }}
+        # env:
+        #   VALIDATE_ALL_CODEBASE: false
+        #   DEFAULT_BRANCH: master
+        #   GITHUB_TOKEN: ${{ secrets.GH_REPO_URL }}
