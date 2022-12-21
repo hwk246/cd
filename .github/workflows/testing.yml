@@ -31,6 +31,7 @@ jobs:
           key: ${{secrets.SSH_KEY}}
           host: ${{secrets.SSH_HOST}}
           username: ${{secrets.SSH_USERNAME}}
+      - name: some lines of code
         run: |
           cd /home/cd
           git pull
