@@ -31,7 +31,7 @@ jobs:
           key: ${{secrets.SSH_KEY}}
           host: ${{secrets.SSH_HOST}}
           username: ${{secrets.SSH_USERNAME}}
-          script: ./github-action-script.sh
+          script: ../github-action-script.sh
 
   job_2_goodbye:
     needs: job_1_test
